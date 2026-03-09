@@ -83,7 +83,6 @@ class SpotifySessionDelegateBootstrapHook: ClassHook<NSObject>, SpotifySessionDe
                         dataTask: task,
                         didReceiveData: try bootstrapMessage.serializedBytes()
                     )
-                    
                 }
                 else {
                     orig.URLSession(session, dataTask: task, didReceiveData: buffer)
