@@ -91,13 +91,13 @@ struct EeveeSettingsView: View {
             
             //
             
-            Section(header: Text("Debug"), footer: Text("Export or clear the debug log.")) {
+            Section(header: Text("debug_title".localized), footer: Text("debug_footer".localized)) {
                 Button {
                     let logPath = NSTemporaryDirectory() + "eeveespotify_debug.log"
                     guard FileManager.default.fileExists(atPath: logPath),
                           let logData = FileManager.default.contents(atPath: logPath),
                           logData.count > 0 else {
-                        PopUpHelper.showPopUp(message: "No debug log found. The log starts recording when the app launches.", buttonText: "OK")
+                        PopUpHelper.showPopUp(message: "debug_message_no_logs".localized, buttonText: "OK")
                         return
                     }
                     let logURL = URL(fileURLWithPath: logPath)
@@ -115,7 +115,7 @@ struct EeveeSettingsView: View {
                 } label: {
                     HStack {
                         Image(systemName: "square.and.arrow.up")
-                        Text("Export Debug Log")
+                        Text("debug_export_logs".localized)
                     }
                 }
                 
@@ -123,11 +123,11 @@ struct EeveeSettingsView: View {
                     let logPath = NSTemporaryDirectory() + "eeveespotify_debug.log"
                     try? "".write(toFile: logPath, atomically: true, encoding: .utf8)
                     writeDebugLog("Log cleared by user")
-                    PopUpHelper.showPopUp(message: "Debug log cleared.", buttonText: "OK")
+                    PopUpHelper.showPopUp(message: "debug_message_cleared".localized, buttonText: "OK")
                 } label: {
                     HStack {
                         Image(systemName: "trash")
-                        Text("Clear Debug Log")
+                        Text("debug_clear_logs".localized)
                     }
                     .foregroundColor(.red)
                 }

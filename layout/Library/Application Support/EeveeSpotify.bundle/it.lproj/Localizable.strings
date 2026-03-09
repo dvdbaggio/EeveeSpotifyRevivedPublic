@@ -139,3 +139,12 @@ play_songs_in_any_order = "Riproduzione dei brani in qualsiasi ordine";
 organize_listening_queue = "Organizzazione della coda di ascolto";
 
 payment_notice = "EeveeSpotify applica delle patch per sblocare alcune funzionalità Premium. È gratis.";
+
+//MARK: New debug settings
+
+debug_title = "Debug";
+debug_footer = "Export or clear the debug log.";
+debug_export_logs = "Export Debug Log";
+debug_clear_logs = "Clear Debug Log";
+debug_message_cleared = "Debug log cleared.";
+debug_message_no_logs = "No debug log found. The log starts recording when the app launches.";
